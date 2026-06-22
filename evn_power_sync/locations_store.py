@@ -35,6 +35,26 @@ def save_cached_locations(locations: list[dict[str, Any]], path: Path = CACHED_L
     _write_json_list(path, locations)
 
 
+def _location_key(location: dict[str, Any]) -> tuple[str | None, str | None]:
+    return location.get("source"), location.get("code")
+
+
+def merge_locations_by_identity(
+    old_locations: list[dict[str, Any]],
+    new_locations: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    merged_by_key = {_location_key(location): dict(location) for location in old_locations}
+    order = [_location_key(location) for location in old_locations]
+
+    for location in new_locations:
+        key = _location_key(location)
+        if key not in merged_by_key:
+            order.append(key)
+        merged_by_key[key] = dict(location)
+
+    return [merged_by_key[key] for key in order]
+
+
 def load_tracked_locations(path: Path = TRACKED_LOCATIONS_PATH) -> list[dict[str, Any]]:
     return _read_json_list(path)
 
@@ -63,7 +83,8 @@ def refresh_locations_cache(path: Path = CACHED_LOCATIONS_PATH) -> list[dict[str
     for parent_code in PROVINCES:
         spc_locations.extend(fetch_power_companies(parent_code))
 
-    combined = hcmc_locations + spc_locations
+    latest_locations = hcmc_locations + spc_locations
+    combined = merge_locations_by_identity(load_cached_locations(path), latest_locations)
     save_cached_locations(combined, path)
     return combined
 

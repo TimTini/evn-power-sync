@@ -29,6 +29,7 @@ uv run evn-power-sync-gui
 Trong GUI:
 
 1. Bấm **Tải lại vị trí online** để lấy/cache vị trí từ 2 nguồn.
+   - Cache được merge theo `source + code`: vị trí cũ vẫn giữ, vị trí trùng được cập nhật bằng dữ liệu mới nhất.
 2. Search vị trí trong ô search.
 3. Chọn vị trí.
 4. Bấm **Lưu vị trí theo dõi** nếu muốn lưu vào `locations.json`.
