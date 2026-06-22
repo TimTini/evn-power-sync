@@ -14,6 +14,21 @@ python -m evn_power_sync.cli init
 python -m evn_power_sync.cli schedule --from-date 22-06-2026 --to-date 02-07-2026
 ```
 
+## GUI
+
+```powershell
+python -m evn_power_sync.gui
+```
+
+Trong GUI:
+
+1. Bấm **Tải lại vị trí online** để lấy/cache vị trí từ 2 nguồn.
+2. Search vị trí trong ô search.
+3. Chọn vị trí.
+4. Bấm **Lưu vị trí theo dõi** nếu muốn lưu vào `locations.json`.
+5. Nhập ngày và khu vực EVNSPC nếu cần.
+6. Bấm **Lấy lịch**.
+
 Lọc khu vực EVNSPC:
 
 ```powershell
