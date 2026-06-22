@@ -14,6 +14,7 @@ BASE_URL = "https://www.cskh.evnspc.vn"
 
 PROVINCES = {
     "PB07": "Đồng Tháp",
+    "PB08": "Tiền Giang",
 }
 
 
@@ -47,7 +48,14 @@ def parse_power_companies(html: str, province: str | None = None) -> list[dict[s
         name = _strip_html(label)
         if not code or not name:
             continue
-        companies.append({"source": "evnspc", "code": code, "name": name, "province": province})
+        companies.append(
+            {
+                "source": "evnspc",
+                "code": code,
+                "name": name,
+                "province": PROVINCES.get(code[:4], province),
+            }
+        )
     return companies
 
 

@@ -37,8 +37,14 @@ class CoreTest(unittest.TestCase):
         self.assertEqual(events[0].start_at.isoformat(), "2026-06-22T09:00:00+07:00")
 
     def test_parse_spc_company_and_schedule(self):
-        options_html = '<option value="PB0709">Điện lực Lấp Vò</option>'
-        self.assertEqual(parse_power_companies(options_html, province="Đồng Tháp")[0]["code"], "PB0709")
+        options_html = (
+            '<option value="PB0709">Điện lực Lấp Vò</option>'
+            '<option value="PB0809">Điện lực Cái Bè</option>'
+        )
+        companies = parse_power_companies(options_html, province="Đồng Tháp")
+        self.assertEqual(companies[0]["code"], "PB0709")
+        self.assertEqual(companies[0]["province"], "Đồng Tháp")
+        self.assertEqual(companies[1]["province"], "Tiền Giang")
 
         html = """<div>KHU VỰC: - Khu vực Cống Bảy Di xã Mỹ An Hưng.
         THỜI GIAN: Từ 13:30:00 ngày 26/06/2026 đến 15:00:00 ngày 26/06/2026
