@@ -3,6 +3,7 @@ import unittest
 from evn_power_sync.hcmc import parse_administratives, normalize_hcmc_plans
 from evn_power_sync.spc import parse_power_companies, normalize_spc_schedule
 from evn_power_sync.models import search_locations, render_schedule
+from evn_power_sync.cli import resolve_schedule_locations
 
 
 class CoreTest(unittest.TestCase):
@@ -78,6 +79,26 @@ class CoreTest(unittest.TestCase):
 
         self.assertIn("23/06/2026 08:00", rendered)
         self.assertIn("Test", rendered)
+
+    def test_schedule_can_use_only_area_when_locations_are_initialized(self):
+        locations = [
+            {"source": "evnhcmc", "name": "Phường Hạnh Thông", "code": "7926890"},
+            {"source": "evnspc", "name": "Điện lực Lấp Vò", "code": "PB0709", "province": "Đồng Tháp"},
+        ]
+
+        resolved = resolve_schedule_locations(locations, query=None, area="Cống Bảy Di")
+
+        self.assertEqual([item["code"] for item in resolved], ["PB0709"])
+
+    def test_schedule_can_use_only_query_when_location_is_initialized(self):
+        locations = [
+            {"source": "evnhcmc", "name": "Phường Hạnh Thông", "code": "7926890"},
+            {"source": "evnspc", "name": "Điện lực Lấp Vò", "code": "PB0709", "province": "Đồng Tháp"},
+        ]
+
+        resolved = resolve_schedule_locations(locations, query="lap vo", area=None)
+
+        self.assertEqual([item["code"] for item in resolved], ["PB0709"])
 
 
 if __name__ == "__main__":

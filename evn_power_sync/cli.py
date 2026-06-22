@@ -60,6 +60,24 @@ def cmd_search(args: argparse.Namespace) -> None:
         print(f"{index}. [{item['source']}] {item['name']} ({item['code']}){province}")
 
 
+def resolve_schedule_locations(
+    initialized_locations: list[dict[str, Any]],
+    query: str | None,
+    area: str | None,
+) -> list[dict[str, Any]]:
+    if query:
+        matched = search_locations(initialized_locations, query)
+        if matched:
+            return matched
+        return search_hcmc_locations(query) + search_spc_locations(query)
+
+    if area:
+        spc_locations = [location for location in initialized_locations if location.get("source") == "evnspc"]
+        return spc_locations or initialized_locations
+
+    return initialized_locations
+
+
 def _events_for_location(location: dict[str, Any], args: argparse.Namespace):
     if location["source"] == "evnhcmc":
         payload = fetch_hcmc_plans(args.from_date.replace("-", "/"), args.to_date.replace("-", "/"), location["code"])
@@ -79,9 +97,7 @@ def _events_for_location(location: dict[str, Any], args: argparse.Namespace):
 
 
 def cmd_schedule(args: argparse.Namespace) -> None:
-    locations = _load_locations()
-    if args.query:
-        locations = search_locations(locations, args.query)
+    locations = resolve_schedule_locations(_load_locations(), args.query, args.area)
     if not locations:
         raise SystemExit(f"Chưa có vị trí. Chạy: python -m evn_power_sync.cli init")
 
