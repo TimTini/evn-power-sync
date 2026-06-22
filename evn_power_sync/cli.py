@@ -6,6 +6,7 @@ from pathlib import Path
 import sys
 from typing import Any
 
+from .area_index import search_area_index
 from .hcmc import fetch_hcmc_plans, normalize_hcmc_plans, search_hcmc_locations
 from .models import render_schedule, search_locations
 from .spc import fetch_spc_schedule, normalize_spc_schedule, search_spc_locations
@@ -64,6 +65,7 @@ def resolve_schedule_locations(
     initialized_locations: list[dict[str, Any]],
     query: str | None,
     area: str | None,
+    area_index_matches: list[dict[str, Any]] | None = None,
 ) -> list[dict[str, Any]]:
     if query:
         matched = search_locations(initialized_locations, query)
@@ -73,7 +75,11 @@ def resolve_schedule_locations(
 
     if area:
         spc_locations = [location for location in initialized_locations if location.get("source") == "evnspc"]
-        return spc_locations or initialized_locations
+        if spc_locations:
+            return spc_locations
+        if area_index_matches is None:
+            area_index_matches = search_area_index(area)
+        return area_index_matches or initialized_locations
 
     return initialized_locations
 
@@ -87,12 +93,12 @@ def _events_for_location(location: dict[str, Any], args: argparse.Namespace):
         return events
 
     html = fetch_spc_schedule(location["code"], args.from_date, args.to_date)
-    query = args.area or ""
+    query = args.area or location.get("area") or ""
     return normalize_spc_schedule(
         html,
         location_query=query,
         province=location.get("province"),
-        power_company=location.get("name"),
+        power_company=location.get("name") or location.get("power_company"),
     )
 
 

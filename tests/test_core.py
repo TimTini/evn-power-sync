@@ -90,6 +90,23 @@ class CoreTest(unittest.TestCase):
 
         self.assertEqual([item["code"] for item in resolved], ["PB0709"])
 
+    def test_schedule_can_use_area_index_when_locations_are_not_initialized(self):
+        resolved = resolve_schedule_locations(
+            initialized_locations=[],
+            query=None,
+            area="Cống Bảy Di",
+            area_index_matches=[
+                {
+                    "source": "evnspc",
+                    "code": "PB0709",
+                    "power_company": "Điện lực Lấp Vò",
+                    "area": "- Khu vực Cống Bảy Di xã Mỹ An Hưng.",
+                }
+            ],
+        )
+
+        self.assertEqual(resolved[0]["code"], "PB0709")
+
     def test_schedule_can_use_only_query_when_location_is_initialized(self):
         locations = [
             {"source": "evnhcmc", "name": "Phường Hạnh Thông", "code": "7926890"},

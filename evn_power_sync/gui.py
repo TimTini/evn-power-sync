@@ -6,6 +6,7 @@ from tkinter import messagebox, ttk
 from types import SimpleNamespace
 from typing import Any
 
+from .area_index import load_area_index, refresh_area_index
 from .cli import _events_for_location
 from .locations_store import (
     add_tracked_location,
@@ -18,6 +19,9 @@ from .models import render_schedule, search_locations
 
 
 def _location_label(location: dict[str, Any]) -> str:
+    if location.get("area"):
+        province = f" - {location.get('province')}" if location.get("province") else ""
+        return f"[area:{location.get('source')}] {location.get('area')} -> {location.get('power_company') or location.get('name')} ({location.get('code')}){province}"
     province = f" - {location.get('province')}" if location.get("province") else ""
     return f"[{location.get('source')}] {location.get('name')} ({location.get('code')}){province}"
 
@@ -28,6 +32,7 @@ class EvnPowerSyncApp(tk.Tk):
         self.title("EVN Power Sync")
         self.geometry("980x680")
         self.cached_locations: list[dict[str, Any]] = []
+        self.area_entries: list[dict[str, Any]] = []
         self.tracked_locations: list[dict[str, Any]] = []
         self.visible_locations: list[dict[str, Any]] = []
 
@@ -79,11 +84,12 @@ class EvnPowerSyncApp(tk.Tk):
 
     def _load_local_locations(self) -> None:
         self.cached_locations = load_cached_locations()
+        self.area_entries = load_area_index()
         self.tracked_locations = load_tracked_locations()
-        self.visible_locations = self.cached_locations or self.tracked_locations
+        self.visible_locations = (self.cached_locations + self.area_entries) or self.tracked_locations
         self._render_locations(self.visible_locations)
         self.status_var.set(
-            f"Cache: {len(self.cached_locations)} vị trí | Theo dõi: {len(self.tracked_locations)} vị trí"
+            f"Cache: {len(self.cached_locations)} vị trí | Khu vực: {len(self.area_entries)} | Theo dõi: {len(self.tracked_locations)} vị trí"
         )
 
     def _render_locations(self, locations: list[dict[str, Any]]) -> None:
@@ -100,7 +106,7 @@ class EvnPowerSyncApp(tk.Tk):
 
     def _apply_search(self) -> None:
         query = self.search_var.get().strip()
-        source = self.cached_locations or self.tracked_locations
+        source = (self.cached_locations + self.area_entries) or self.tracked_locations
         self._render_locations(search_locations(source, query, limit=100) if query else source)
 
     def _set_output(self, text: str) -> None:
@@ -122,12 +128,22 @@ class EvnPowerSyncApp(tk.Tk):
         threading.Thread(target=run, daemon=True).start()
 
     def _refresh_online_async(self) -> None:
-        def done(locations: list[dict[str, Any]]) -> None:
-            self.cached_locations = locations
-            self._apply_search()
-            self.status_var.set(f"Đã tải lại {len(locations)} vị trí online")
+        from_date = self.from_date_var.get().strip()
+        to_date = self.to_date_var.get().strip()
 
-        self._run_background("Đang tải vị trí online...", refresh_locations_cache, done)
+        def worker() -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+            locations = refresh_locations_cache()
+            area_entries = refresh_area_index(locations, from_date, to_date)
+            return locations, area_entries
+
+        def done(result: tuple[list[dict[str, Any]], list[dict[str, Any]]]) -> None:
+            locations, area_entries = result
+            self.cached_locations = locations
+            self.area_entries = area_entries
+            self._apply_search()
+            self.status_var.set(f"Đã tải {len(locations)} vị trí và quét {len(area_entries)} khu vực")
+
+        self._run_background("Đang tải vị trí online và quét khu vực...", worker, done)
 
     def _save_selected_location(self) -> None:
         location = self._selected_location()
@@ -146,7 +162,7 @@ class EvnPowerSyncApp(tk.Tk):
         args = SimpleNamespace(
             from_date=self.from_date_var.get().strip(),
             to_date=self.to_date_var.get().strip(),
-            area=self.area_var.get().strip() or None,
+            area=self.area_var.get().strip() or location.get("area") or None,
         )
 
         def worker() -> str:
