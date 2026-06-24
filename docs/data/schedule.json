@@ -1,7 +1,201 @@
 {
-  "generated_at": null,
-  "from_date": null,
-  "to_date": null,
-  "locations": [],
-  "events": []
+  "generated_at": "2026-06-24T14:12:24.191972+07:00",
+  "from_date": "24-06-2026",
+  "to_date": "08-07-2026",
+  "locations": [
+    {
+      "source": "evnhcmc",
+      "code": "7926890",
+      "name": "Phường Hạnh Thông",
+      "level": 3
+    },
+    {
+      "source": "evnspc",
+      "code": "PB0709",
+      "name": "Điện lực Lấp Vò",
+      "province": "Đồng Tháp"
+    }
+  ],
+  "events": [
+    {
+      "source": "evnspc",
+      "location_query": "",
+      "area": "- Rạch Ngã Ba Đình, Rạch Ngã Cái, Cầu Thân Sở, Rạch Đồn Điền xã Mỹ An Hưng.",
+      "start_at": "2026-06-24T06:30:00+07:00",
+      "end_at": "2026-06-24T18:00:00+07:00",
+      "reason": "Bảo trì, sửa chữa lưới điện",
+      "province": "Đồng Tháp",
+      "district_or_company": "Điện lực Lấp Vò",
+      "ward": null,
+      "stations": []
+    },
+    {
+      "source": "evnspc",
+      "location_query": "",
+      "area": "- Khu dân cư Bình Hiệp B xã Lấp Vò.ng.",
+      "start_at": "2026-06-26T08:00:00+07:00",
+      "end_at": "2026-06-26T09:00:00+07:00",
+      "reason": "Thí nghiệm, sửa chữa bảo dưỡng Trung, hạ áp",
+      "province": "Đồng Tháp",
+      "district_or_company": "Điện lực Lấp Vò",
+      "ward": null,
+      "stations": []
+    },
+    {
+      "source": "evnspc",
+      "location_query": "",
+      "area": "- Khu vực Chùa Xẻo Tre xã Mỹ An Hưng.",
+      "start_at": "2026-06-26T09:30:00+07:00",
+      "end_at": "2026-06-26T10:30:00+07:00",
+      "reason": "Thí nghiệm, sửa chữa bảo dưỡng Trung, hạ áp",
+      "province": "Đồng Tháp",
+      "district_or_company": "Điện lực Lấp Vò",
+      "ward": null,
+      "stations": []
+    },
+    {
+      "source": "evnspc",
+      "location_query": "",
+      "area": "- Khu vực Cống Cai Binh xã Mỹ An Hưng.",
+      "start_at": "2026-06-26T11:00:00+07:00",
+      "end_at": "2026-06-26T12:00:00+07:00",
+      "reason": "Thí nghiệm, sửa chữa bảo dưỡng Trung, hạ áp",
+      "province": "Đồng Tháp",
+      "district_or_company": "Điện lực Lấp Vò",
+      "ward": null,
+      "stations": []
+    },
+    {
+      "source": "evnspc",
+      "location_query": "",
+      "area": "- Khu vực Cống Bảy Di xã Mỹ An Hưng.",
+      "start_at": "2026-06-26T13:30:00+07:00",
+      "end_at": "2026-06-26T15:00:00+07:00",
+      "reason": "Thí nghiệm, sửa chữa bảo dưỡng Trung, hạ áp",
+      "province": "Đồng Tháp",
+      "district_or_company": "Điện lực Lấp Vò",
+      "ward": null,
+      "stations": []
+    },
+    {
+      "source": "evnspc",
+      "location_query": "",
+      "area": "- Khu vực Chợ Mương Kinh và Ủy ban xã Hội An Đông cũ thuộc xã Mỹ An Hưng.",
+      "start_at": "2026-06-26T15:30:00+07:00",
+      "end_at": "2026-06-26T17:00:00+07:00",
+      "reason": "Thí nghiệm, sửa chữa bảo dưỡng Trung, hạ áp",
+      "province": "Đồng Tháp",
+      "district_or_company": "Điện lực Lấp Vò",
+      "ward": null,
+      "stations": []
+    },
+    {
+      "source": "evnspc",
+      "location_query": "",
+      "area": "- Nhà máy năng lượng mặt trời I.D.I xã Lấp Vò.",
+      "start_at": "2026-06-28T05:30:00+07:00",
+      "end_at": "2026-06-28T06:00:00+07:00",
+      "reason": "Bảo trì, sửa chữa lưới điện",
+      "province": "Đồng Tháp",
+      "district_or_company": "Điện lực Lấp Vò",
+      "ward": null,
+      "stations": []
+    },
+    {
+      "source": "evnspc",
+      "location_query": "",
+      "area": "- Quốc lộ 80 từ Tổ điện xã Bình Thành đến Phà Vàm Cống, Quốc lộ 54 từ Cầu Hòa Lạc đến Ngã Ba Vàm Cống, khu dân cư Vàm Cống và khu nhà máy Trisedco, nhà máy I.D.I xã Lấp Vò.",
+      "start_at": "2026-06-28T06:30:00+07:00",
+      "end_at": "2026-06-28T07:00:00+07:00",
+      "reason": "Bảo trì, sửa chữa lưới điện",
+      "province": "Đồng Tháp",
+      "district_or_company": "Điện lực Lấp Vò",
+      "ward": null,
+      "stations": []
+    },
+    {
+      "source": "evnspc",
+      "location_query": "",
+      "area": "- Quốc lộ 54 từ Cầu Hòa Lạc đến Ngã Ba Vàm Cống, Cầu Lạch Mắm, Khu dân cư Vàm Cống, Cty TNHH TM Sài Gòn (Nhà máy Nam Việt cũ) thuộc xã Lấp Vò.",
+      "start_at": "2026-06-28T06:30:00+07:00",
+      "end_at": "2026-06-28T18:00:00+07:00",
+      "reason": "Thí nghiệm, sửa chữa bảo dưỡng Trung, hạ áp",
+      "province": "Đồng Tháp",
+      "district_or_company": "Điện lực Lấp Vò",
+      "ward": null,
+      "stations": []
+    },
+    {
+      "source": "evnspc",
+      "location_query": "",
+      "area": "Khu vực Chợ Thủ xã Tân Khánh Trung",
+      "start_at": "2026-06-28T07:00:00+07:00",
+      "end_at": "2026-06-28T18:00:00+07:00",
+      "reason": "Thí nghiệm, sửa chữa bảo dưỡng Trung, hạ áp",
+      "province": "Đồng Tháp",
+      "district_or_company": "Điện lực Lấp Vò",
+      "ward": null,
+      "stations": []
+    },
+    {
+      "source": "evnspc",
+      "location_query": "",
+      "area": "- Siêu thị Go và khu đô thị mới Lấp Vò xã Lấp Vò.",
+      "start_at": "2026-06-28T07:30:00+07:00",
+      "end_at": "2026-06-28T08:00:00+07:00",
+      "reason": "Bảo trì, sửa chữa lưới điện",
+      "province": "Đồng Tháp",
+      "district_or_company": "Điện lực Lấp Vò",
+      "ward": null,
+      "stations": []
+    },
+    {
+      "source": "evnspc",
+      "location_query": "",
+      "area": "Khu dân cư Chùa Bà Hai, đường Nguyễn Huệ từ VÒng Xoay Lấp Vò đên đường DH64, Khu trung tâm thương mại Lấp Vò, Rạch Cái Dâu từ Cầu Cái Dâu đến Cầu Ranh Bình Thành, đường Nguyễn An Ninh, Lý Thái Tổ thuộc xã Lấp Vò.",
+      "start_at": "2026-06-28T08:00:00+07:00",
+      "end_at": "2026-06-28T09:00:00+07:00",
+      "reason": "Bảo trì, sửa chữa lưới điện",
+      "province": "Đồng Tháp",
+      "district_or_company": "Điện lực Lấp Vò",
+      "ward": null,
+      "stations": []
+    },
+    {
+      "source": "evnspc",
+      "location_query": "",
+      "area": "Khu dân cư Chùa Bà Hai, đường Nguyễn Huệ từ VÒng Xoay Lấp Vò đên đường DH64, Khu trung tâm thương mại Lấp Vò, Rạch Cái Dâu từ Cầu Cái Dâu đến Cầu Ranh Bình Thành, đường Nguyễn An Ninh, Lý Thái Tổ thuộc xã Lấp Vò.",
+      "start_at": "2026-06-28T11:00:00+07:00",
+      "end_at": "2026-06-28T12:00:00+07:00",
+      "reason": "Bảo trì, sửa chữa lưới điện",
+      "province": "Đồng Tháp",
+      "district_or_company": "Điện lực Lấp Vò",
+      "ward": null,
+      "stations": []
+    },
+    {
+      "source": "evnspc",
+      "location_query": "",
+      "area": "- Siêu thị Go và khu đô thị mới Lấp Vò xã Lấp Vò.",
+      "start_at": "2026-06-28T12:00:00+07:00",
+      "end_at": "2026-06-28T12:30:00+07:00",
+      "reason": "Bảo trì, sửa chữa lưới điện",
+      "province": "Đồng Tháp",
+      "district_or_company": "Điện lực Lấp Vò",
+      "ward": null,
+      "stations": []
+    },
+    {
+      "source": "evnspc",
+      "location_query": "",
+      "area": "- Quốc lộ 80 từ Tổ điện xã Bình Thành đến Phà Vàm Cống, Quốc lộ 54 từ Cầu Hòa Lạc đến Ngã Ba Vàm Cống, khu dân cư Vàm Cống và khu nhà máy Trisedco, nhà máy I.D.I xã Lấp Vò.",
+      "start_at": "2026-06-28T17:30:00+07:00",
+      "end_at": "2026-06-28T18:00:00+07:00",
+      "reason": "Bảo trì, sửa chữa lưới điện",
+      "province": "Đồng Tháp",
+      "district_or_company": "Điện lực Lấp Vò",
+      "ward": null,
+      "stations": []
+    }
+  ]
 }

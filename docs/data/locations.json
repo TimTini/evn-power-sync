@@ -1,5 +1,1146 @@
 {
-  "generated_at": null,
-  "count": 0,
-  "locations": []
+  "generated_at": "2026-06-24T14:11:57.750900+07:00",
+  "count": 190,
+  "locations": [
+    {
+      "source": "evnhcmc",
+      "code": "7926732",
+      "name": "Đặc khu Côn Đảo",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926876",
+      "name": "Phường  An Nhơn",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926536",
+      "name": "Phường  Rạch Dừa",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927316",
+      "name": "Phường An Đông",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926878",
+      "name": "Phường An Hội Đông",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926882",
+      "name": "Phường An Hội Tây",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927094",
+      "name": "Phường An Khánh",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927460",
+      "name": "Phường An Lạc",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925975",
+      "name": "Phường An Phú",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926767",
+      "name": "Phường An Phú Đông",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926560",
+      "name": "Phường Bà Rịa",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927154",
+      "name": "Phường Bàn Cờ",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926983",
+      "name": "Phường Bảy Hiền",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925813",
+      "name": "Phường Bến Cát",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926743",
+      "name": "Phường Bến Thành",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925915",
+      "name": "Phường Bình Cơ",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927424",
+      "name": "Phường Bình Đông",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925760",
+      "name": "Phường Bình Dương",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925987",
+      "name": "Phường Bình Hòa",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927439",
+      "name": "Phường Bình Hưng Hòa",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926905",
+      "name": "Phường Bình Lợi Trung",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927364",
+      "name": "Phường Bình Phú",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926911",
+      "name": "Phường Bình Quới",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927442",
+      "name": "Phường Bình Tân",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927367",
+      "name": "Phường Bình Tây",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926929",
+      "name": "Phường Bình Thạnh",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927232",
+      "name": "Phường Bình Thới",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927373",
+      "name": "Phường Bình Tiên",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927448",
+      "name": "Phường Bình Trị Đông",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927097",
+      "name": "Phường Bình Trưng",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927112",
+      "name": "Phường Cát Lái",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927058",
+      "name": "Phường Cầu Kiệu",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926758",
+      "name": "Phường Cầu Ông Lãnh",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925771",
+      "name": "Phường Chánh Hiệp",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927418",
+      "name": "Phường Chánh Hưng",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925837",
+      "name": "Phường Chánh Phú Hòa",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927343",
+      "name": "Phường Chợ Lớn",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927301",
+      "name": "Phường Chợ Quán",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925942",
+      "name": "Phường Dĩ An",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927169",
+      "name": "Phường Diên Hồng",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925951",
+      "name": "Phường Đông Hòa",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926791",
+      "name": "Phường Đông Hưng Thuận",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927043",
+      "name": "Phường Đức Nhuận",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926944",
+      "name": "Phường Gia Định",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926884",
+      "name": "Phường Gò Vấp",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926890",
+      "name": "Phường Hạnh Thông",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926809",
+      "name": "Phường Hiệp Bình",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927211",
+      "name": "Phường Hòa Bình",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927163",
+      "name": "Phường Hòa Hưng",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925849",
+      "name": "Phường Hòa Lợi",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927265",
+      "name": "Phường Khánh Hội",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925966",
+      "name": "Phường Lái Thiêu",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926800",
+      "name": "Phường Linh Xuân",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926833",
+      "name": "Phường Long Bình",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926566",
+      "name": "Phường Long Hương",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925840",
+      "name": "Phường Long Nguyên",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926857",
+      "name": "Phường Long Phước",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926860",
+      "name": "Phường Long Trường",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927238",
+      "name": "Phường Minh Phụng",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927142",
+      "name": "Phường Nhiêu Lộc",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925768",
+      "name": "Phường Phú An",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927427",
+      "name": "Phường Phú Định",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927349",
+      "name": "Phường Phú Lâm",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925750",
+      "name": "Phường Phú Lợi",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926704",
+      "name": "Phường Phú Mỹ",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927073",
+      "name": "Phường Phú Nhuận",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927028",
+      "name": "Phường Phú Thạnh",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927226",
+      "name": "Phường Phú Thọ",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927022",
+      "name": "Phường Phú Thọ Hòa",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927484",
+      "name": "Phường Phú Thuận",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926848",
+      "name": "Phường Phước Long",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926542",
+      "name": "Phường Phước Thắng",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926740",
+      "name": "Phường Sài Gòn",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926803",
+      "name": "Phường Tam Bình",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926572",
+      "name": "Phường Tam Long",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926526",
+      "name": "Phường Tam Thắng",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927004",
+      "name": "Phường Tân Bình",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926737",
+      "name": "Phường Tân Định",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925945",
+      "name": "Phường Tân Đông Hiệp",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926710",
+      "name": "Phường Tân Hải",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925920",
+      "name": "Phường Tân Hiệp",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926995",
+      "name": "Phường Tân Hòa",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927475",
+      "name": "Phường Tân Hưng",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925891",
+      "name": "Phường Tân Khánh",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927487",
+      "name": "Phường Tân Mỹ",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927031",
+      "name": "Phường Tân Phú",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926713",
+      "name": "Phường Tân Phước",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927007",
+      "name": "Phường Tân Sơn",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926977",
+      "name": "Phường Tân Sơn Hòa",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926968",
+      "name": "Phường Tân Sơn Nhất",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927019",
+      "name": "Phường Tân Sơn Nhì",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927457",
+      "name": "Phường Tân Tạo",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926725",
+      "name": "Phường Tân Thành",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926782",
+      "name": "Phường Tân Thới Hiệp",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927478",
+      "name": "Phường Tân Thuận",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925888",
+      "name": "Phường Tân Uyên",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926842",
+      "name": "Phường Tăng Nhơn Phú",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925843",
+      "name": "Phường Tây Nam",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927013",
+      "name": "Phường Tây Thạnh",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926956",
+      "name": "Phường Thạnh Mỹ Tây",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926773",
+      "name": "Phường Thới An",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925846",
+      "name": "Phường Thới Hòa",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926898",
+      "name": "Phường Thông Tây Hội",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925747",
+      "name": "Phường Thủ Dầu Một",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926824",
+      "name": "Phường Thủ Đức",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925978",
+      "name": "Phường Thuận An",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925969",
+      "name": "Phường Thuận Giao",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926785",
+      "name": "Phường Trung Mỹ Tây",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927286",
+      "name": "Phường Vĩnh Hội",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925912",
+      "name": "Phường Vĩnh Tân",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926506",
+      "name": "Phường Vũng Tàu",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927190",
+      "name": "Phường Vườn Lài",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927259",
+      "name": "Phường Xóm Chiếu",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927139",
+      "name": "Phường Xuân Hòa",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925867",
+      "name": "Xã An Long",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927508",
+      "name": "Xã An Nhơn Tây",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927673",
+      "name": "Xã An Thới Đông",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927592",
+      "name": "Xã Bà Điểm",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925906",
+      "name": "Xã Bắc Tân Uyên",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925822",
+      "name": "Xã Bàu Bàng",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926638",
+      "name": "Xã Bàu Lâm",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927637",
+      "name": "Xã Bình Chánh",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926656",
+      "name": "Xã Bình Châu",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926590",
+      "name": "Xã Bình Giã",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927619",
+      "name": "Xã Bình Hưng",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927667",
+      "name": "Xã Bình Khánh",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927610",
+      "name": "Xã Bình Lợi",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927544",
+      "name": "Xã Bình Mỹ",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927664",
+      "name": "Xã Cần Giờ",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926596",
+      "name": "Xã Châu Đức",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926728",
+      "name": "Xã Châu Pha",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927553",
+      "name": "Xã Củ Chi",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926680",
+      "name": "Xã Đất Đỏ",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925777",
+      "name": "Xã Dầu Tiếng",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927568",
+      "name": "Xã Đông Thạnh",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927658",
+      "name": "Xã Hiệp Phước",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926620",
+      "name": "Xã Hồ Tràm",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926647",
+      "name": "Xã Hòa Hiệp",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926641",
+      "name": "Xã Hòa Hội",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927559",
+      "name": "Xã Hóc Môn",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927628",
+      "name": "Xã Hưng Long",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926608",
+      "name": "Xã Kim Long",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926659",
+      "name": "Xã Long Điền",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926662",
+      "name": "Xã Long Hải",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925792",
+      "name": "Xã Long Hòa",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926545",
+      "name": "Xã Long Sơn",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925780",
+      "name": "Xã Minh Thạnh",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926575",
+      "name": "Xã Ngãi Giao",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926617",
+      "name": "Xã Nghĩa Thành",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927655",
+      "name": "Xã Nhà Bè",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927511",
+      "name": "Xã Nhuận Đức",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925858",
+      "name": "Xã Phú Giáo",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927541",
+      "name": "Xã Phú Hòa Đông",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926686",
+      "name": "Xã Phước Hải",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925882",
+      "name": "Xã Phước Hòa",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925864",
+      "name": "Xã Phước Thành",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927496",
+      "name": "Xã Tân An Hội",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927595",
+      "name": "Xã Tân Nhựt",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927604",
+      "name": "Xã Tân Vĩnh Lộc",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927526",
+      "name": "Xã Thái Mỹ",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925807",
+      "name": "Xã Thanh An",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927676",
+      "name": "Xã Thạnh An",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925909",
+      "name": "Xã Thường Tân",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7925819",
+      "name": "Xã Trừ Văn Thố",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927601",
+      "name": "Xã Vĩnh Lộc",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926584",
+      "name": "Xã Xuân Sơn",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7927577",
+      "name": "Xã Xuân Thới Sơn",
+      "level": 3
+    },
+    {
+      "source": "evnhcmc",
+      "code": "7926632",
+      "name": "Xã Xuyên Mộc",
+      "level": 3
+    },
+    {
+      "source": "evnspc",
+      "code": "PB0701",
+      "name": "Điện lực Cao Lãnh",
+      "province": "Đồng Tháp"
+    },
+    {
+      "source": "evnspc",
+      "code": "PB0702",
+      "name": "Điện lực Sa Đéc",
+      "province": "Đồng Tháp"
+    },
+    {
+      "source": "evnspc",
+      "code": "PB0703",
+      "name": "Điện lực Nha Mân",
+      "province": "Đồng Tháp"
+    },
+    {
+      "source": "evnspc",
+      "code": "PB0704",
+      "name": "Điện lực Lai Vung",
+      "province": "Đồng Tháp"
+    },
+    {
+      "source": "evnspc",
+      "code": "PB0705",
+      "name": "Điện lực Thường Thới Tiền",
+      "province": "Đồng Tháp"
+    },
+    {
+      "source": "evnspc",
+      "code": "PB0706",
+      "name": "Điện lực Tân Hồng",
+      "province": "Đồng Tháp"
+    },
+    {
+      "source": "evnspc",
+      "code": "PB0707",
+      "name": "Điện lực Tháp Mười",
+      "province": "Đồng Tháp"
+    },
+    {
+      "source": "evnspc",
+      "code": "PB0708",
+      "name": "Điện lực Mỹ Thọ",
+      "province": "Đồng Tháp"
+    },
+    {
+      "source": "evnspc",
+      "code": "PB0709",
+      "name": "Điện lực Lấp Vò",
+      "province": "Đồng Tháp"
+    },
+    {
+      "source": "evnspc",
+      "code": "PB0710",
+      "name": "Điện lực Thanh Bình",
+      "province": "Đồng Tháp"
+    },
+    {
+      "source": "evnspc",
+      "code": "PB0711",
+      "name": "Điện lực Tam Nông",
+      "province": "Đồng Tháp"
+    },
+    {
+      "source": "evnspc",
+      "code": "PB0712",
+      "name": "Điện lực Hồng Ngự",
+      "province": "Đồng Tháp"
+    },
+    {
+      "source": "evnspc",
+      "code": "PB0801",
+      "name": "Điện lực Mỹ Tho",
+      "province": "Tiền Giang"
+    },
+    {
+      "source": "evnspc",
+      "code": "PB0802",
+      "name": "Điện lực Gò Công Đông",
+      "province": "Tiền Giang"
+    },
+    {
+      "source": "evnspc",
+      "code": "PB0803",
+      "name": "Điện lực Gò Công",
+      "province": "Tiền Giang"
+    },
+    {
+      "source": "evnspc",
+      "code": "PB0804",
+      "name": "Điện lực Vĩnh Bình",
+      "province": "Tiền Giang"
+    },
+    {
+      "source": "evnspc",
+      "code": "PB0805",
+      "name": "Điện lực Cai Lậy",
+      "province": "Tiền Giang"
+    },
+    {
+      "source": "evnspc",
+      "code": "PB0806",
+      "name": "Điện lực Tân Phước",
+      "province": "Tiền Giang"
+    },
+    {
+      "source": "evnspc",
+      "code": "PB0807",
+      "name": "Điện lực Chợ Gạo",
+      "province": "Tiền Giang"
+    },
+    {
+      "source": "evnspc",
+      "code": "PB0808",
+      "name": "Điện lực Châu Thành",
+      "province": "Tiền Giang"
+    },
+    {
+      "source": "evnspc",
+      "code": "PB0809",
+      "name": "Điện lực Cái Bè",
+      "province": "Tiền Giang"
+    },
+    {
+      "source": "evnspc",
+      "code": "PB0810",
+      "name": "Điện lực Tân Phú Đông",
+      "province": "Tiền Giang"
+    }
+  ]
 }
