@@ -31,6 +31,18 @@ def load_cached_locations(path: Path = CACHED_LOCATIONS_PATH) -> list[dict[str, 
     return _read_json_list(path)
 
 
+def load_locations_export_rows(path: Path) -> list[dict[str, Any]]:
+    if not path.exists():
+        return []
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if isinstance(data, dict):
+        rows = data.get("locations", [])
+        return rows if isinstance(rows, list) else []
+    if isinstance(data, list):
+        return data
+    return []
+
+
 def save_cached_locations(locations: list[dict[str, Any]], path: Path = CACHED_LOCATIONS_PATH) -> None:
     _write_json_list(path, locations)
 
@@ -87,6 +99,24 @@ def refresh_locations_cache(path: Path = CACHED_LOCATIONS_PATH) -> list[dict[str
     combined = merge_locations_by_identity(load_cached_locations(path), latest_locations)
     save_cached_locations(combined, path)
     return combined
+
+
+def export_locations_cache(output_path: Path) -> list[dict[str, Any]]:
+    import tempfile
+    from datetime import datetime
+
+    from .hcmc import VN_TZ
+    from .models import build_locations_payload
+
+    with tempfile.TemporaryDirectory() as tmp:
+        cache_path = Path(tmp) / "locations_cache.json"
+        save_cached_locations(load_locations_export_rows(output_path), cache_path)
+        locations = refresh_locations_cache(cache_path)
+
+    payload = build_locations_payload(locations, generated_at=datetime.now(VN_TZ))
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    return locations
 
 
 def search_cached_locations(

@@ -1,8 +1,8 @@
 # GitHub Pages + Actions (không cần server cá nhân)
 
-Hướng dẫn bật web app tĩnh và job sync lịch trên GitHub.
+Hướng dẫn bật web app tĩnh và job sync hàng ngày trên GitHub.
 
-## 1. Chuẩn bị config vị trí
+## 1. Chuẩn bị config vị trí theo dõi
 
 ```powershell
 Copy-Item config\locations.json.example config\locations.json
@@ -30,36 +30,37 @@ Sau vài phút, web app tại:
 https://<user>.github.io/evn-power-sync/
 ```
 
-Web đọc cố định `docs/data/schedule.json` (cùng origin, không cần API server).
-
 ## 4. Job sync mỗi ngày
 
-Workflow: `.github/workflows/sync-schedule.yml`
+Workflow: `.github/workflows/sync-evn-data.yml`
 
-- Cron: `0 17 * * *` UTC (~00:00 giờ Việt Nam, mỗi ngày một lần)
+- Cron: `0 17 * * *` UTC (~00:00 giờ Việt Nam)
 - `workflow_dispatch`: chạy tay trên tab Actions
-- Lệnh: `uv run evn-power-sync export --config config/locations.json --output docs/data/schedule.json`
+- Các bước:
+  1. `export-locations` → `docs/data/locations.json`
+  2. `export-area-index` → `docs/data/area_index.json`
+  3. `export` (lịch theo `config/locations.json`) → `docs/data/schedule.json`
 - Commit + push nếu dữ liệu đổi
-- Nếu chưa có `config/locations.json`, workflow dùng bản `.example`
 
 ## 5. Kiểm tra local
 
 ```powershell
 uv sync
+uv run evn-power-sync export-locations --output docs\data\locations.json
+uv run evn-power-sync export-area-index --output docs\data\area_index.json
 uv run evn-power-sync export --config config\locations.json --output docs\data\schedule.json
-# Mở docs\index.html trong browser (hoặc dùng static server nhỏ)
 ```
 
 ## PASS / FAIL
 
 | Bước | PASS khi |
 |------|----------|
-| Export local | `docs/data/schedule.json` có `generated_at` và `events` |
-| Workflow | Actions job xanh, commit `chore: sync outage schedule` (nếu có thay đổi) |
-| Pages | URL GitHub Pages load được, hiện meta + danh sách sự kiện |
+| Export local | `docs/data/*.json` có `generated_at` |
+| Workflow | Actions job xanh, commit `chore: sync EVN locations and outage data` (nếu có thay đổi) |
+| Pages | URL GitHub Pages load được |
 
 ## Ghi chú
 
-- Repo private: vẫn chạy Actions; Pages public có thể cần GitHub Pro tùy visibility.
+- `config/locations.json` gitignore — không đưa địa chỉ cá nhân lên GitHub trừ khi bạn chủ đích `git add -f`.
 - Lịch GitHub Actions có thể trễ vài phút đến vài chục phút khi tải cao.
-- Nếu EVN chặn IP datacenter, job có thể fail — xem log Actions.
+- `export-area-index` quét lịch EVNSPC theo khoảng ngày — có thể mất vài phút trên Actions.

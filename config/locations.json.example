@@ -1,9 +1,9 @@
 [
   {
     "source": "evnspc",
-    "code": "PB0709",
-    "name": "Điện lực mẫu",
-    "province": "Đồng Tháp",
+    "code": "XX0001",
+    "name": "Điện lực Demo",
+    "province": "Tỉnh Demo",
     "area": "Khu vực mẫu"
   }
 ]

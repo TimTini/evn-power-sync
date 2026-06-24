@@ -8,8 +8,9 @@ from pathlib import Path
 import sys
 from typing import Any
 
-from .area_index import search_area_index
+from .area_index import export_area_index, search_area_index
 from .hcmc import VN_TZ, fetch_hcmc_plans, normalize_hcmc_plans, search_hcmc_locations
+from .locations_store import export_locations_cache, load_locations_export_rows
 from .models import OutageEvent, build_schedule_payload, render_schedule, search_locations
 from .spc import fetch_spc_schedule, normalize_spc_schedule, search_spc_locations
 
@@ -179,6 +180,28 @@ def cmd_export(args: argparse.Namespace) -> None:
     print(f"Đã ghi {len(events)} sự kiện vào {output_path}")
 
 
+def cmd_export_locations(args: argparse.Namespace) -> None:
+    output_path = Path(args.output)
+    locations = export_locations_cache(output_path)
+    print(f"Đã ghi {len(locations)} vị trí vào {output_path}")
+
+
+def cmd_export_area_index(args: argparse.Namespace) -> None:
+    locations_path = Path(args.locations)
+    output_path = Path(args.output)
+    from_date, to_date = default_date_range(args.days_ahead)
+    from_date = args.from_date or from_date
+    to_date = args.to_date or to_date
+
+    all_locations = load_locations_export_rows(locations_path)
+    spc_locations = [location for location in all_locations if location.get("source") == "evnspc" and location.get("code")]
+    if not spc_locations:
+        raise SystemExit(f"Không có vị trí EVNSPC trong {locations_path}.")
+
+    entries = export_area_index(spc_locations, output_path, from_date, to_date)
+    print(f"Đã ghi {len(entries)} khu vực vào {output_path}")
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Đồng bộ lịch ngừng/giảm cung cấp điện EVNHCMC + EVNSPC")
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -214,6 +237,17 @@ def build_parser() -> argparse.ArgumentParser:
     export_parser.add_argument("--area", help="Lọc khu vực chi tiết trong lịch EVNSPC")
     export_parser.add_argument("--output", default="docs/data/schedule.json", help="File JSON đầu ra")
     export_parser.set_defaults(func=cmd_export)
+
+    export_locations_parser = subparsers.add_parser("export-locations", help="Tải và ghi danh mục vị trí EVN ra JSON")
+    export_locations_parser.add_argument("--output", default="docs/data/locations.json", help="File JSON đầu ra")
+    export_locations_parser.set_defaults(func=cmd_export_locations)
+
+    export_area_index_parser = subparsers.add_parser("export-area-index", help="Quét lịch EVNSPC và ghi index khu vực ra JSON")
+    add_schedule_date_args(export_area_index_parser, required=False)
+    export_area_index_parser.add_argument("--days-ahead", type=int, default=14, help="Khi không truyền --to-date: số ngày tính từ hôm nay (VN)")
+    export_area_index_parser.add_argument("--locations", default="docs/data/locations.json", help="File locations.json đã export")
+    export_area_index_parser.add_argument("--output", default="docs/data/area_index.json", help="File JSON đầu ra")
+    export_area_index_parser.set_defaults(func=cmd_export_area_index)
     return parser
 
 

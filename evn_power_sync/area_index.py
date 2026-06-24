@@ -27,6 +27,46 @@ def load_area_index(path: Path = AREA_INDEX_PATH) -> list[dict[str, Any]]:
     return _read_json_list(path)
 
 
+def load_area_index_export_rows(path: Path) -> list[dict[str, Any]]:
+    if not path.exists():
+        return []
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if isinstance(data, dict):
+        rows = data.get("entries", [])
+        return rows if isinstance(rows, list) else []
+    if isinstance(data, list):
+        return data
+    return []
+
+
+def export_area_index(
+    spc_locations: list[dict[str, Any]],
+    output_path: Path,
+    from_date: str,
+    to_date: str,
+) -> list[dict[str, Any]]:
+    import tempfile
+    from datetime import datetime
+
+    from .hcmc import VN_TZ
+    from .models import build_area_index_payload
+
+    with tempfile.TemporaryDirectory() as tmp:
+        index_path = Path(tmp) / "area_index.json"
+        save_area_index(load_area_index_export_rows(output_path), index_path)
+        entries = refresh_area_index(spc_locations, from_date, to_date, index_path)
+
+    payload = build_area_index_payload(
+        entries,
+        generated_at=datetime.now(VN_TZ),
+        from_date=from_date,
+        to_date=to_date,
+    )
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    return entries
+
+
 def save_area_index(entries: list[dict[str, Any]], path: Path = AREA_INDEX_PATH) -> None:
     _write_json_list(path, entries)
 

@@ -1,4 +1,4 @@
-name: Sync outage schedule
+name: Sync EVN data
 
 on:
   schedule:
@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: sync-outage-schedule
+  group: sync-evn-data
   cancel-in-progress: true
 
 jobs:
@@ -28,24 +28,30 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
-      - name: Ensure locations config exists
+      - name: Ensure tracked locations config exists
         run: |
           if [ ! -f config/locations.json ]; then
             cp config/locations.json.example config/locations.json
-            echo "Using config/locations.json.example — commit config/locations.json for your own areas."
+            echo "Using config/locations.json.example for schedule export."
           fi
 
-      - name: Export schedule JSON
+      - name: Export locations catalog
+        run: uv run evn-power-sync export-locations --output docs/data/locations.json
+
+      - name: Export EVNSPC area index
+        run: uv run evn-power-sync export-area-index --locations docs/data/locations.json --output docs/data/area_index.json
+
+      - name: Export outage schedule
         run: uv run evn-power-sync export --config config/locations.json --output docs/data/schedule.json
 
-      - name: Commit updated schedule
+      - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/data/schedule.json
+          git add docs/data/locations.json docs/data/area_index.json docs/data/schedule.json
           if git diff --staged --quiet; then
-            echo "No schedule changes."
+            echo "No data changes."
             exit 0
           fi
-          git commit -m "chore: sync outage schedule"
+          git commit -m "chore: sync EVN locations and outage data"
           git push

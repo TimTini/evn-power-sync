@@ -17,20 +17,20 @@ class LocationsStoreTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             cache_path = Path(tmp) / "locations_cache.json"
             locations = [
-                {"source": "evnhcmc", "code": "7926890", "name": "Phường Hạnh Thông"},
-                {"source": "evnspc", "code": "PB0709", "name": "Điện lực Lấp Vò"},
+                {"source": "evnhcmc", "code": "9000001", "name": "Phường Dêmô"},
+                {"source": "evnspc", "code": "XX0001", "name": "Điện lực Demo"},
             ]
 
             save_cached_locations(locations, cache_path)
-            found = search_cached_locations("hanh thong", cache_path)
+            found = search_cached_locations("phuong demo", cache_path)
 
             self.assertEqual(load_cached_locations(cache_path), locations)
-            self.assertEqual(found[0]["code"], "7926890")
+            self.assertEqual(found[0]["code"], "9000001")
 
     def test_add_tracked_location_deduplicates_by_source_and_code(self):
         with tempfile.TemporaryDirectory() as tmp:
             tracked_path = Path(tmp) / "locations.json"
-            location = {"source": "evnspc", "code": "PB0709", "name": "Điện lực Lấp Vò"}
+            location = {"source": "evnspc", "code": "XX0001", "name": "Điện lực Demo"}
 
             add_tracked_location(location, tracked_path)
             add_tracked_location(location, tracked_path)

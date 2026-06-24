@@ -73,6 +73,34 @@ def build_schedule_payload(
     }
 
 
+def build_locations_payload(
+    locations: list[dict[str, Any]],
+    *,
+    generated_at: datetime,
+) -> dict[str, Any]:
+    return {
+        "generated_at": generated_at.isoformat(),
+        "count": len(locations),
+        "locations": locations,
+    }
+
+
+def build_area_index_payload(
+    entries: list[dict[str, Any]],
+    *,
+    generated_at: datetime,
+    from_date: str,
+    to_date: str,
+) -> dict[str, Any]:
+    return {
+        "generated_at": generated_at.isoformat(),
+        "from_date": from_date,
+        "to_date": to_date,
+        "count": len(entries),
+        "entries": entries,
+    }
+
+
 def render_schedule(events: list[OutageEvent]) -> str:
     if not events:
         return "Không có lịch ngừng/giảm cung cấp điện cho vị trí và khoảng ngày đã chọn."

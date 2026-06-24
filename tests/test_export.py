@@ -10,13 +10,13 @@ class ExportTest(unittest.TestCase):
         vn_tz = timezone(timedelta(hours=7))
         event = OutageEvent(
             source="evnspc",
-            location_query="Cống Bảy Di",
-            area="- Khu vực Cống Bảy Di",
+            location_query="Gamma",
+            area="- Khu vực Gamma",
             start_at=datetime(2026, 6, 26, 13, 30, tzinfo=vn_tz),
             end_at=datetime(2026, 6, 26, 15, 0, tzinfo=vn_tz),
             reason="Sửa chữa",
-            province="Đồng Tháp",
-            district_or_company="Điện lực Lấp Vò",
+            province="Tỉnh Demo",
+            district_or_company="Điện lực Demo",
             stations=["Trạm A"],
         )
 
@@ -49,7 +49,7 @@ class ExportTest(unittest.TestCase):
             generated_at=datetime(2026, 6, 24, 10, 0, tzinfo=vn_tz),
             from_date="24-06-2026",
             to_date="08-07-2026",
-            locations=[{"source": "evnspc", "code": "PB0709"}],
+            locations=[{"source": "evnspc", "code": "XX0001"}],
         )
 
         self.assertEqual(payload["events"][0]["area"], "B")

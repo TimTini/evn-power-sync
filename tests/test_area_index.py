@@ -13,21 +13,21 @@ from evn_power_sync.area_index import (
 
 class AreaIndexTest(unittest.TestCase):
     def test_build_area_entries_from_spc_schedule(self):
-        html = """KHU VỰC: - Khu vực Cống Bảy Di xã Mỹ An Hưng.
+        html = """KHU VỰC: - Khu vực Gamma xã Delta.
         THỜI GIAN: Từ 13:30:00 ngày 26/06/2026 đến 15:00:00 ngày 26/06/2026
         LÝ DO NGỪNG CUNG CẤP ĐIỆN: Test"""
         location = {
             "source": "evnspc",
-            "code": "PB0709",
-            "name": "Điện lực Lấp Vò",
-            "province": "Đồng Tháp",
+            "code": "XX0001",
+            "name": "Điện lực Demo",
+            "province": "Tỉnh Demo",
         }
 
         entries = build_area_entries(location, html, "22-06-2026", "26-06-2026")
 
-        self.assertEqual(entries[0]["code"], "PB0709")
-        self.assertIn("Cống Bảy Di", entries[0]["area"])
-        self.assertEqual(entries[0]["power_company"], "Điện lực Lấp Vò")
+        self.assertEqual(entries[0]["code"], "XX0001")
+        self.assertIn("Gamma", entries[0]["area"])
+        self.assertEqual(entries[0]["power_company"], "Điện lực Demo")
 
     def test_merge_area_entries_keeps_old_and_updates_duplicate_area(self):
         old_entries = [
@@ -49,16 +49,16 @@ class AreaIndexTest(unittest.TestCase):
             path = Path(tmp) / "area_index.json"
             save_area_index(
                 [
-                    {"source": "evnspc", "code": "PB0709", "area": "- Khu vực Cống Bảy Di xã Mỹ An Hưng."},
-                    {"source": "evnspc", "code": "PB0704", "area": "- Khu vực khác."},
+                    {"source": "evnspc", "code": "XX0001", "area": "- Khu vực Gamma xã Delta."},
+                    {"source": "evnspc", "code": "XX0002", "area": "- Khu vực khác."},
                 ],
                 path,
             )
 
-            found = search_area_index("My An Hung", path)
+            found = search_area_index("gamma", path)
 
-            self.assertEqual(load_area_index(path)[0]["code"], "PB0709")
-            self.assertEqual(found[0]["code"], "PB0709")
+            self.assertEqual(load_area_index(path)[0]["code"], "XX0001")
+            self.assertEqual(found[0]["code"], "XX0001")
 
 
 if __name__ == "__main__":
