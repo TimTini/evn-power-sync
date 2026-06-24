@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EVN Power Sync — Lịch ngừng điện</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <p class="eyebrow">EVNHCMC + EVNSPC</p>
+        <h1>Lịch ngừng / giảm cung cấp điện</h1>
+        <p class="lede">
+          Dữ liệu đọc từ <code>docs/data/schedule.json</code>, được GitHub Actions cập nhật định kỳ.
+        </p>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="panel meta-panel" id="meta-panel" hidden>
+        <div class="meta-grid">
+          <div>
+            <span class="label">Cập nhật lần cuối</span>
+            <strong id="generated-at">—</strong>
+          </div>
+          <div>
+            <span class="label">Khoảng ngày</span>
+            <strong id="date-range">—</strong>
+          </div>
+          <div>
+            <span class="label">Số sự kiện</span>
+            <strong id="event-count">0</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel controls">
+        <label class="search-field" for="search-input">
+          <span class="label">Lọc khu vực / lý do</span>
+          <input id="search-input" type="search" placeholder="Ví dụ: Cống Bảy Di, sửa chữa..." autocomplete="off" />
+        </label>
+      </section>
+
+      <section class="panel">
+        <div id="status" class="status" role="status">Đang tải dữ liệu...</div>
+        <div id="events" class="events"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer wrap">
+      <p>
+        Nguồn:
+        <a href="https://bdmd.evnhcmc.vn" rel="noopener noreferrer">EVNHCMC</a>
+        ·
+        <a href="https://www.cskh.evnspc.vn/TraCuu/LichNgungGiamCungCapDien" rel="noopener noreferrer">EVNSPC</a>
+      </p>
+    </footer>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

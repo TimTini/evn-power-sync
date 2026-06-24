@@ -5,7 +5,7 @@
 - EVNHCMC: `bdmd.evnhcmc.vn`
 - EVNSPC: `cskh.evnspc.vn`
 
-## Chạy
+## Chạy local
 
 Chuẩn bị môi trường:
 
@@ -18,6 +18,36 @@ uv run evn-power-sync search "hanh thong"
 uv run evn-power-sync search "lap vo"
 uv run evn-power-sync init
 uv run evn-power-sync schedule --from-date 22-06-2026 --to-date 02-07-2026
+```
+
+## GitHub Pages + Actions (không cần server cá nhân)
+
+Luồng:
+
+1. **GitHub Actions** chạy **mỗi ngày** (00:00 giờ VN) → gọi EVN → ghi `docs/data/schedule.json` → commit.
+2. **GitHub Pages** host web tĩnh trong `docs/` → đọc file JSON đó.
+
+Thiết lập nhanh:
+
+```powershell
+Copy-Item config\locations.json.example config\locations.json
+# chỉnh vị trí theo dõi
+uv run evn-power-sync export --config config\locations.json --output docs\data\schedule.json
+```
+
+Sau khi push lên GitHub:
+
+- Bật **Pages**: branch `master`, folder `/docs`
+- Workflow `.github/workflows/sync-schedule.yml` tự chạy (cron hàng ngày + chạy tay)
+
+Chi tiết: [scripts/setup-github-pages.ps1](scripts/setup-github-pages.ps1)
+
+Web app: `docs/index.html` — fetch `data/schedule.json`, lọc khu vực, hiển thị thời gian/lý do.
+
+Config vị trí (local / tùy chỉnh, không commit mặc định):
+
+```text
+config/locations.json   # copy từ config/locations.json.example
 ```
 
 ## GUI
@@ -54,14 +84,14 @@ uv run evn-power-sync schedule --area "Cống Bảy Di" --from-date 22-06-2026 -
 uv run evn-power-sync schedule --query "lap vo" --from-date 22-06-2026 --to-date 26-06-2026
 ```
 
-Config vị trí lưu tại:
+Config vị trí lưu tại (local):
 
 ```text
-%USERPROFILE%\.evn-power-sync\locations.json
+[user-home]/.evn-power-sync/locations.json
 ```
 
-Index khu vực EVNSPC lưu tại:
+Index khu vực EVNSPC lưu tại (local):
 
 ```text
-%USERPROFILE%\.evn-power-sync\area_index.json
+[user-home]/.evn-power-sync/area_index.json
 ```

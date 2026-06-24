@@ -5,3 +5,4 @@ __pycache__/
 _tmp/
 *.pyc
 *.egg-info/
+config/locations.json

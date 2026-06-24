@@ -41,6 +41,38 @@ def search_locations(locations: list[dict[str, Any]], query: str, limit: int = 2
     return [item for _, item in sorted(scored, key=lambda row: row[0])[:limit]]
 
 
+def event_to_dict(event: OutageEvent) -> dict[str, Any]:
+    return {
+        "source": event.source,
+        "location_query": event.location_query,
+        "area": event.area,
+        "start_at": event.start_at.isoformat(),
+        "end_at": event.end_at.isoformat(),
+        "reason": event.reason,
+        "province": event.province,
+        "district_or_company": event.district_or_company,
+        "ward": event.ward,
+        "stations": list(event.stations),
+    }
+
+
+def build_schedule_payload(
+    events: list[OutageEvent],
+    *,
+    generated_at: datetime,
+    from_date: str,
+    to_date: str,
+    locations: list[dict[str, Any]],
+) -> dict[str, Any]:
+    return {
+        "generated_at": generated_at.isoformat(),
+        "from_date": from_date,
+        "to_date": to_date,
+        "locations": locations,
+        "events": [event_to_dict(event) for event in sorted(events, key=lambda item: item.start_at)],
+    }
+
+
 def render_schedule(events: list[OutageEvent]) -> str:
     if not events:
         return "Không có lịch ngừng/giảm cung cấp điện cho vị trí và khoảng ngày đã chọn."

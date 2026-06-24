@@ -1,0 +1,51 @@
+name: Sync outage schedule
+
+on:
+  schedule:
+    # 00:00 giờ Việt Nam (UTC+7) mỗi ngày
+    - cron: "0 17 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-outage-schedule
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Ensure locations config exists
+        run: |
+          if [ ! -f config/locations.json ]; then
+            cp config/locations.json.example config/locations.json
+            echo "Using config/locations.json.example — commit config/locations.json for your own areas."
+          fi
+
+      - name: Export schedule JSON
+        run: uv run evn-power-sync export --config config/locations.json --output docs/data/schedule.json
+
+      - name: Commit updated schedule
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/schedule.json
+          if git diff --staged --quiet; then
+            echo "No schedule changes."
+            exit 0
+          fi
+          git commit -m "chore: sync outage schedule"
+          git push
