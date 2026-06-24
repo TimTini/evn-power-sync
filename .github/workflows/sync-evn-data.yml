@@ -1,6 +1,10 @@
 name: Sync EVN data
 
 on:
+  push:
+    branches: [master]
+    paths:
+      - .github/workflows/sync-evn-data.yml
   schedule:
     # 00:00 giờ Việt Nam (UTC+7) mỗi ngày
     - cron: "0 17 * * *"
